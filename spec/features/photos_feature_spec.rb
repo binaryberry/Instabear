@@ -60,9 +60,22 @@ describe 'photos' do
 		expect(page).not_to have_content 'Panda'
 		expect(page).to have_content 'Post deleted successfully'
 	    end
+	end
 
+	context 'showing a post' do
+		before do
+	        Photo.create(caption: 'Panda')
+	    end
+
+	    it 'has a post with its caption' do
+	    visit '/photos'
+		click_link 'Show Panda'
+		expect(page).to have_content 'Panda'
+		expect(current_path).to match(/photos\/\d/)
+	    end
 
 	end
+
 
 
 
