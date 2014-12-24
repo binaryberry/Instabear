@@ -23,4 +23,12 @@ class PhotosController < ApplicationController
 		redirect_to photos_path
 	end
 
+	def destroy
+		@photo = Photo.find(params[:id])
+		@photo.destroy
+		flash[:notice] = 'Post deleted successfully'
+		redirect_to photos_path
+
+	end
+
 end

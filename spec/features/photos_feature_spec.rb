@@ -49,7 +49,20 @@ describe 'photos' do
 
 	end
 
+	context 'deleting post' do
+		before do
+	        Photo.create(caption: 'Panda')
+	    end
 
+	    it 'removes post when user clicks a delete link' do
+	    visit '/photos'
+		click_link 'Delete Panda'
+		expect(page).not_to have_content 'Panda'
+		expect(page).to have_content 'Post deleted successfully'
+	    end
+
+
+	end
 
 
 

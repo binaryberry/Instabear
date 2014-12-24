@@ -1,7 +1,10 @@
+<%= notice %>
+
 <% if @photos.any? %>
     <% @photos.each do |photo| %>
         <h2> <%= photo.caption %> </h2>
         <%= link_to "Edit #{photo.caption}",edit_photo_path(photo) %>
+        <%= link_to "Delete #{photo.caption}",photo_path(photo), method: :delete %>
     <% end %>
 <% else %>
     No photos yet
