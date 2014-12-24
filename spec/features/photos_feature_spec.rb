@@ -32,4 +32,35 @@ describe 'photos' do
 			expect(current_path).to eq '/photos'
 		end
 	end
+
+	context 'editing post' do
+		before do
+	        Photo.create(caption: 'Panda')
+	    end
+		
+		it "can allow a user to edit a post" do
+		visit '/photos'
+		click_link 'Edit Panda'
+		fill_in 'Caption', with: "Koala"
+		click_button "Update Photo"
+		expect(page).to have_content 'Koala'
+		expect(current_path).to eq '/photos'
+		end
+
+	end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
