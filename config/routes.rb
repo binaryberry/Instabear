@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
 resources :photos do
-    # resource :comments
+    resources :comments
 end
 
   # Example resource route with options:
@@ -22,7 +22,7 @@ end
   #       get 'short'
   #       post 'toggle'
   #     end
-  #
+  
   #     collection do
   #       get 'sold'
   #     end

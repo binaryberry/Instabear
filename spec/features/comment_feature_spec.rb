@@ -3,16 +3,16 @@ require 'rails_helper'
 describe 'commenting' do 
 
 	before do
-		Photo.create(caption: "This is a bear")
+		Photo.create(caption: "Panda")
 	end
 
-	xit 'allows users to leave a comment using a form' do
+	it 'allows users to leave a comment using a form' do
 		visit '/photos'
-		fill_in "Thoughts", with: "What a nice bear"
+		click_link 'Comment on Panda'
+		fill_in "Thoughts", with: "Awesome"
 		click_button 'Growl it!'
-
 		expect(current_path).to eq '/photos'
-		expect(page).to have_content('so so')
+		expect(page).to have_content('Awesome')
 	end
 	
 end

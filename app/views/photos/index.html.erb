@@ -4,6 +4,7 @@
         <%= link_to "Edit #{photo.caption}",edit_photo_path(photo) %>
         <%= link_to "Delete #{photo.caption}",photo_path(photo), method: :delete %>
         <%= link_to "Show #{photo.caption}",photo_path(photo)%>
+        <%= link_to "Comment on #{photo.caption}",new_photo_comment_path(photo)%>
     <% end %>
 <% else %>
     No photos yet
