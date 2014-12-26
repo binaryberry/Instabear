@@ -33,5 +33,4 @@ ActiveRecord::Schema.define(version: 20141225181822) do
     t.text     "caption"
   end
 
-  add_foreign_key "comments", "photos"
 end
