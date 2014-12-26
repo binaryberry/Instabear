@@ -4,9 +4,13 @@
         <em> <%= time_ago_in_words(photo.created_at)%> ago </em>
         <ul>
 	        <% photo.comments.each do |comment|%> 
-				<li><%= "#{comment.thoughts}" %> <em> <%= time_ago_in_words(comment.created_at)%> ago </em>  </li>
-                <%= link_to 'Like', comment_likes_path(comment), method: :post %>
-                <%= comment.likes.count %> Like
+				<li> <%= "#{comment.thoughts}" %> <em> <%= time_ago_in_words(comment.created_at)%> ago </em>  
+                <%= link_to 'Like', comment_likes_path(comment), class: 'likes-link' %>
+                <span class='likes_count'>
+                    <%= comment.likes.count %>
+                </span>
+                Like
+                </li>
 			<%end%>
 		</ul>
         <%= link_to "Edit #{photo.caption}",edit_photo_path(photo) %>
