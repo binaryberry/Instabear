@@ -16,6 +16,10 @@ resources :photos do
     resources :comments
 end
 
+resources :comments do 
+  resources :likes
+end
+
   # Example resource route with options:
   #   resources :products do
   #     member do
