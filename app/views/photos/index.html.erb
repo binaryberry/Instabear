@@ -1,6 +1,11 @@
 <% if @photos.any? %>
     <% @photos.each do |photo| %>
         <h2> <%= photo.caption %> </h2>
+        <ul>
+        <%= photo.comments.each do |review|%> 
+			<li><%= "{review.thoughts}" %></li>
+		<%end%>
+		</ul>
         <%= link_to "Edit #{photo.caption}",edit_photo_path(photo) %>
         <%= link_to "Delete #{photo.caption}",photo_path(photo), method: :delete %>
         <%= link_to "Show #{photo.caption}",photo_path(photo)%>
