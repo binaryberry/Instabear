@@ -3,10 +3,15 @@
         <h2> <%= photo.caption %> </h2>
         <em> <%= time_ago_in_words(photo.created_at)%> ago </em>
         <li>
-            <%= photo.paws.count %> Paws
+        <%= link_to 'Paw it', photo_paws_path(photo), class: 'paws-link' %>
+        <span class='paws_count'>
+                    <%= photo.paws.count %>
+        </span>
+        paws
         </li>
         <ul>
-        <%= link_to 'Paw it', photo_paws_path(photo), method: :post %>
+
+
         <%= link_to "Edit",edit_photo_path(photo) %>
         <%= link_to "Delete",photo_path(photo), method: :delete %>
         <%= link_to "Show",photo_path(photo)%>
