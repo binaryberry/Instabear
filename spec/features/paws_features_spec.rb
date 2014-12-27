@@ -9,7 +9,8 @@ describe 'liking' do
 	it 'can paw a photo, updating the photo paw count ', js: true do
 		visit '/photos'
 		click_link 'Paw it'
-		expect(page).to have_content('1 Paw')
+		click_link 'Paw it'
+		expect(page).to have_content('2 paws')
 	end
 	
 end
