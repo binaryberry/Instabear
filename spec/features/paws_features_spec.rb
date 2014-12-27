@@ -1,0 +1,15 @@
+require 'rails_helper'
+
+describe 'liking' do 
+
+	before do
+		panda = Photo.create(caption: "Panda")
+	end
+
+	it 'can paw a photo, updating the photo paw count ' do
+		visit '/photos'
+		click_link 'Paw it'
+		expect(page).to have_content('1 Paw')
+	end
+	
+end

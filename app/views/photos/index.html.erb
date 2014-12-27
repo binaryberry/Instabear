@@ -2,6 +2,9 @@
     <% @photos.each do |photo| %>
         <h2> <%= photo.caption %> </h2>
         <em> <%= time_ago_in_words(photo.created_at)%> ago </em>
+        <li>
+            <%= photo.paws.count %> Paws
+        </li>
         <ul>
 	        <% photo.comments.each do |comment|%> 
 				<li> <%= "#{comment.thoughts}" %> <em> <%= time_ago_in_words(comment.created_at)%> ago </em>  
@@ -13,6 +16,7 @@
                 </li>
 			<%end%>
 		</ul>
+        <%= link_to 'Paw it', photo_paws_path(photo), method: :post %>
         <%= link_to "Edit #{photo.caption}",edit_photo_path(photo) %>
         <%= link_to "Delete #{photo.caption}",photo_path(photo), method: :delete %>
         <%= link_to "Show #{photo.caption}",photo_path(photo)%>
