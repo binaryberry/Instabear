@@ -6,21 +6,21 @@
             <%= photo.paws.count %> Paws
         </li>
         <ul>
-	        <% photo.comments.each do |comment|%> 
-				<li> <%= "#{comment.thoughts}" %> <em> <%= time_ago_in_words(comment.created_at)%> ago </em>  
+        <%= link_to 'Paw it', photo_paws_path(photo), method: :post %>
+        <%= link_to "Edit",edit_photo_path(photo) %>
+        <%= link_to "Delete",photo_path(photo), method: :delete %>
+        <%= link_to "Show",photo_path(photo)%>
+            <% photo.comments.each do |comment|%> 
+                <li> <%= "#{comment.thoughts}" %> <em> <%= time_ago_in_words(comment.created_at)%> ago </em>  
                 <%= link_to 'Like', comment_likes_path(comment), class: 'likes-link' %>
                 <span class='likes_count'>
                     <%= comment.likes.count %>
                 </span>
                 Like
                 </li>
-			<%end%>
-		</ul>
-        <%= link_to 'Paw it', photo_paws_path(photo), method: :post %>
-        <%= link_to "Edit #{photo.caption}",edit_photo_path(photo) %>
-        <%= link_to "Delete #{photo.caption}",photo_path(photo), method: :delete %>
-        <%= link_to "Show #{photo.caption}",photo_path(photo)%>
-        <%= link_to "Comment on #{photo.caption}",new_photo_comment_path(photo)%>
+            <%end%>
+        <%= link_to "Add comment",new_photo_comment_path(photo)%>
+        </ul>
     <% end %>
 <% else %>
     No photos yet

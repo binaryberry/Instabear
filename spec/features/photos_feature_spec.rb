@@ -40,7 +40,7 @@ describe 'photos' do
 		
 		it "can allow a user to edit a post" do
 		visit '/photos'
-		click_link 'Edit Panda'
+		click_link 'Edit'
 		fill_in 'Caption', with: "Koala"
 		click_button "Update Photo"
 		expect(page).to have_content 'Koala'
@@ -56,7 +56,7 @@ describe 'photos' do
 
 	    it 'removes post when user clicks a delete link' do
 	    visit '/photos'
-		click_link 'Delete Panda'
+		click_link 'Delete'
 		expect(page).not_to have_content 'Panda'
 		expect(page).to have_content 'Post deleted successfully'
 	    end
@@ -69,7 +69,7 @@ describe 'photos' do
 
 	    it 'has a post with its caption' do
 	    visit '/photos'
-		click_link 'Show Panda'
+		click_link 'Show'
 		expect(page).to have_content 'Panda'
 		expect(current_path).to match(/photos\/\d/)
 	    end
