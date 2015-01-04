@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-
 gem 'coffee-rails', '~> 4.1.0'
 gem 'dotenv-rails', '~> 1.0.2'
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'omniauth-facebook'
 gem 'pg'
 gem 'rails', '4.2.0'
 gem 'responders', '~> 2.0'
