@@ -1,6 +1,7 @@
 <% if @photos.any? %>
     <% @photos.each do |photo| %>
         <h2> <%= photo.caption %> </h2>
+        <h2> <%= image_tag photo.image.url(:thumb) %> </h2>
         <em> <%= time_ago_in_words(photo.created_at)%> ago </em>
         <li>
         <%= link_to 'Paw it', photo_paws_path(photo), class: 'paws-link' %>
