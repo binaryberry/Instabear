@@ -1,5 +1,4 @@
-:html => { :multipart => true }
-<%= form_for @photo do |f| %>
+<%= form_for @photo, :html => { :multipart => true } do |f| %>
 <%= f.label :caption %>
 <%= f.file_field :image %>
 <%= f.text_field :caption %>

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'dotenv-rails', '~> 1.0.2'
 gem 'devise'
