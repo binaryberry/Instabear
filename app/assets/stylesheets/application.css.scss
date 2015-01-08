@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-awesome
  *= require_self
  */
 @import "bootstrap-sprockets";
@@ -20,6 +21,12 @@
 	float: center;
     width: 300px;
     background-color: #FCFFF5;
+}
+
+.subcontainer {
+	float: center;
+	width: auto;
+	background-color: #D1DBBD;
 }
 
 .row {

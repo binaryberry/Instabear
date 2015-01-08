@@ -6,25 +6,25 @@
             <h2> <%= image_tag photo.image.url(:thumb) %> </h2>
                 <em> <%= time_ago_in_words(photo.created_at)%> ago </em>
                 <p>
+                <i>
                 <%= link_to 'Paw it !', photo_paws_path(photo), class: 'paws-link' %>
                 <span class='paws_count'>
                             <%= photo.paws.count %>
                 </span>
-                paws
+                <i class="fa fa-paw"></i> 
                 </p>
                 <ul>
-                <%= link_to "Edit",edit_photo_path(photo) %>
-                <%= link_to "Delete",photo_path(photo), method: :delete %>
-                <%= link_to "Show",photo_path(photo)%>
-                    <% photo.comments.each do |comment|%> 
-                        <p> <%= "#{comment.thoughts}" %> <em> <%= time_ago_in_words(comment.created_at)%> ago </em>  
-                        <%= link_to 'Like', comment_likes_path(comment), class: 'likes-link' %>
-                        <span class='likes_count'>
-                            <%= comment.likes.count %>
-                        </span>
-                        Like
-                        </p>
-                    <%end%>
+                <%= link_to "",edit_photo_path(photo), class: "glyphicon glyphicon-pencil" %>
+                <%= link_to "",photo_path(photo),class: "glyphicon glyphicon-remove-circle", method: :delete %>
+                <% photo.comments.each do |comment|%> 
+                    <p> <%= "#{comment.thoughts}" %> <em> <%= time_ago_in_words(comment.created_at)%> ago </em>  
+                    <%= link_to 'Like', comment_likes_path(comment), class: 'likes-link' %>
+                    <span class='likes_count'>
+                        <%= comment.likes.count %>
+                    </span>
+                    Like
+                    </p>
+                <%end%>
                 <%= link_to "Add comment",new_photo_comment_path(photo)%>
                 </ul>
         </section>
