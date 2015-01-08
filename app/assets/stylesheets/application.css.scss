@@ -15,3 +15,26 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.container {
+	float: center;
+    width: 300px;
+    background-color: #FCFFF5;
+}
+
+.row {
+	float: center;
+    background-color: #91AA9D;
+    width: auto;
+}
+
+
+.column {
+	float: center;
+
+}
+
+h2 {
+	float: center;
+
+}

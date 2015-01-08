@@ -4,6 +4,7 @@
   <title>Instabear</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="public/favicon.ico" rel="icon" type="image/x-icon" />
 </head>
 <body>
 
@@ -16,7 +17,9 @@
 <%end%>
 <%= notice %>
 <section class="container">
-	<%= yield %>
+	<section class="subcontainer">
+		<%= yield %>
+	</section>
 </section>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
