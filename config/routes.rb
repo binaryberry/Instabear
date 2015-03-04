@@ -21,6 +21,9 @@ resources :comments do
   resources :likes
 end
 
+resources :fur do
+end
+
   # Example resource route with options:
   #   resources :products do
   #     member do

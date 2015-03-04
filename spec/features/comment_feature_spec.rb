@@ -8,7 +8,7 @@ describe 'commenting' do
 
 	it 'allows users to leave a comment using a form' do
 		visit '/photos'
-		click_link 'Add comment'
+		click_link 'Comment'
 		fill_in "Thoughts", with: "Awesome"
 		click_button 'Growl it!'
 		expect(current_path).to eq '/photos'

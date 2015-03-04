@@ -1,0 +1,2 @@
+module FurHelper
+end

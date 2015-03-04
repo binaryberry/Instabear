@@ -14,8 +14,8 @@
                 <i class="fa fa-paw"></i> 
                 </p>
                 <ul>
-                <%= link_to "",edit_photo_path(photo), class: "glyphicon glyphicon-pencil" %>
-                <%= link_to "",photo_path(photo),class: "glyphicon glyphicon-remove-circle", method: :delete %>
+                <span><%= link_to " ",edit_photo_path(photo), id: "edit", class: "glyphicon glyphicon-pencil" %></span>
+                <%= link_to " ",photo_path(photo), id:"delete", class: "glyphicon glyphicon-remove-circle", method: :delete %>
                 <% photo.comments.each do |comment|%> 
                     <p> <%= "#{comment.thoughts}" %> <em> <%= time_ago_in_words(comment.created_at)%> ago </em>  
                     <%= link_to '', comment_likes_path(comment), class: 'likes-link glyphicon glyphicon-thumbs-up' %>
